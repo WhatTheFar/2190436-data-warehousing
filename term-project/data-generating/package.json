@@ -1,0 +1,64 @@
+{
+  "name": "data-generate",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "start:dev": "tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main.js\"",
+    "start:debug": "tsc-watch -p tsconfig.build.json --onSuccess \"node --inspect-brk dist/main.js\"",
+    "start:prod": "node dist/main.js",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "prettier": "prettier --config ./.prettierrc --write \"./src/**/*.ts\""
+  },
+  "dependencies": {
+    "cli-progress": "^3.6.0",
+    "dotenv": "^8.1.0",
+    "event-iterator": "^1.2.0",
+    "faker": "^4.1.0",
+    "glob": "^7.1.6",
+    "mssql": "^6.2.0",
+    "rimraf": "^2.6.2",
+    "typeorm": "^0.2.24",
+    "yargs": "^15.3.0"
+  },
+  "devDependencies": {
+    "@types/cli-progress": "^3.4.2",
+    "@types/dotenv": "^6.1.1",
+    "@types/faker": "^4.1.11",
+    "@types/glob": "^7.1.1",
+    "@types/jest": "24.0.11",
+    "@types/node": "^12.7.5",
+    "jest": "24.7.1",
+    "prettier": "1.17.0",
+    "ts-jest": "24.0.2",
+    "ts-node": "8.1.0",
+    "tsc-watch": "2.2.1",
+    "tsconfig-paths": "3.8.0",
+    "tslint": "5.16.0",
+    "typescript": "^3.6.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "./coverage",
+    "testEnvironment": "node"
+  }
+}
