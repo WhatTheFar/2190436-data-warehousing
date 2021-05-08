@@ -28,7 +28,7 @@
     "glob": "^7.1.6",
     "mssql": "^6.2.0",
     "rimraf": "^2.6.2",
-    "typeorm": "^0.2.24",
+    "typeorm": "^0.2.25",
     "yargs": "^15.3.0"
   },
   "devDependencies": {
